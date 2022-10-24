@@ -38,13 +38,13 @@ INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
 INF MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
 
 
-        FILE DRIVER = d93ce3d8-a7eb-4730-8c8e-cc466a9ecc3c  {
+        FILE DRIVER = d93ce3d8-a7eb-4730-8c8e-cc466a9ecc4c  {
           SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-d93ce3d8-a7eb-4730-8c8e-cc466a9ecc3c/section0.dxe.depex
           SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-d93ce3d8-a7eb-4730-8c8e-cc466a9ecc3c/section1.pe
           SECTION UI = "RscRtDxe"
 
         }       
-        FILE DRIVER = 6c2004ef-4e0e-4be4-b14c-340eb4aa5891  {
+        FILE DRIVER = 6c2004ef-4e0e-4be4-b14c-340eb4aa5892  {
           SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-6c2004ef-4e0e-4be4-b14c-340eb4aa5891/section0.dxe.depex
           SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-6c2004ef-4e0e-4be4-b14c-340eb4aa5891/section1.pe
           SECTION UI = "SCHandlerRtDxe"
