@@ -40,3 +40,7 @@
 
   AcpiPlatformUpdateLib|QcomPkg/Library/AcpiPlatformUpdateLib/AcpiPlatformUpdateLib.inf
   PlatformThemeLib|QcomPkg/Library/PlatformThemeLib/PlatformThemeLib.inf
+  
+  [Components.common]
+  # Graphics Driver
+  SurfaceDuoFamilyPkg/Driver/SimpleFbDxe/SimpleFbDxe.inf
