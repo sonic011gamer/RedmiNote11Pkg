@@ -32,24 +32,24 @@
 
 [PcdsFixedAtBuild.common]
   # Platform-specific
-  gArmTokenSpaceGuid.PcdSystemMemorySize|0x180000000        # 6GB Size
+  gArmTokenSpaceGuid.PcdSystemMemorySize|0x100000000        # 4GB Size
 
   # SMBIOS
-  gSurfaceDuoFamilyPkgTokenSpaceGuid.PcdSmbiosSystemModel|"Surface Duo"
-  gSurfaceDuoFamilyPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"1930"
-  gSurfaceDuoFamilyPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"Surface_Duo_1930"
-  gSurfaceDuoFamilyPkgTokenSpaceGuid.PcdSmbiosBoardModel|"Surface Duo"
+  gSurfaceDuoFamilyPkgTokenSpaceGuid.PcdSmbiosSystemModel|"Redmi Note 11"
+  gSurfaceDuoFamilyPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"Spesn"
+  gSurfaceDuoFamilyPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"Redmi_Note_11"
+  gSurfaceDuoFamilyPkgTokenSpaceGuid.PcdSmbiosBoardModel|"Redmi Note 11"
 
   # Simple FrameBuffer
-  gSurfaceDuoFamilyPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1350
-  gSurfaceDuoFamilyPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|1800
+  gSurfaceDuoFamilyPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
+  gSurfaceDuoFamilyPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2400
   gSurfaceDuoFamilyPkgTokenSpaceGuid.PcdMipiFrameBufferPixelBpp|32
 
 [PcdsDynamicDefault.common]
-  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|1350
-  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|1800
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoHorizontalResolution|1350
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoVerticalResolution|1800
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|1080
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|2400
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoHorizontalResolution|1080
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoVerticalResolution|2400
   gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutRow|150
   gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutColumn|150
 
