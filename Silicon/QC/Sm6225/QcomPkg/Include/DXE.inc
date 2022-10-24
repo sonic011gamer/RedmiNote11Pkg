@@ -67,7 +67,11 @@ INF MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
 INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
 INF MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
 
-INF MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
+  FILE DRIVER = cccb0c28-4b24-11d5-9a5a-0090273fc14d  {
+    SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-cccb0c28-4b24-11d5-9a5a-0090273fc14d/section0.pe
+    SECTION UI = "GraphicsConsoleDxe"
+
+  }
 
 INF MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
 
