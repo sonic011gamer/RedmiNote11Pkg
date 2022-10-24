@@ -1,0 +1,46 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Update APT sources
+      run: sudo apt update
+    
+    - name: Install VSTS dependencies
+      run: sudo apt install uuid-dev
+    
+    - name: Fix directory links
+      run: sudo ln -sfn $(pwd) ../RedmiNote11Pkg
+      
+    - name: Prepare pre-build environment, phase 0
+      run: chmod +x ./setup_env.sh && sudo ./setup_env.sh
+
+    - name: Prepare pre-build environment, phase 1
+      run: pip install --upgrade -r ./pip-requirements.txt
+
+    - name: Prepare pre-build environment, phase 2
+      run: chmod +x ./build_releaseinfo.ps1 && ./build_releaseinfo.ps1
+
+    - name: UEFI build
+      run: chmod +x ./build_uefi_epsilon.sh && ./build_uefi_epsilon.sh
+
+    - name: BootShim build
+      run: chmod +x ./build_boot_shim.sh && ./build_boot_shim.sh
+
+    - name: UEFI boot image build
+      run: chmod +x ./build_boot_images.sh && ./build_boot_images.sh
+
+    - uses: actions/upload-artifact@v3
+      with:
+       name: SM6225 UEFI (Redmi Note 11)
+       path: ./ImageResources/Epsilon/uefi.img
