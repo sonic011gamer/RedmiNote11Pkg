@@ -8,10 +8,8 @@ static ARM_MEMORY_REGION_DESCRIPTOR_EX gDeviceMemoryDescriptorEx[] = {
     { "Kernel",           0x40000000, 0x05700000, AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, WRITE_BACK_XN},
     { "HYP",              0x45700000, 0x00600000, AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, WRITE_BACK_XN},
     { "Boot Info",        0x45D00000, 0x00020000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK_XN},
-    { "RAM Partition",    0x45D20000, 0x002DF000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK_XN},
 //  { "AOP CMD DB",       0x85F00000, 0x00040000, AddMem, MEM_RES, WRITE_COMBINEABLE, Reserv, UNCACHED_UNBUFFERED_XN},
     { "SMEM",             0x46000000, 0x00200000, AddMem, MEM_RES, WRITE_COMBINEABLE, Reserv, UNCACHED_UNBUFFERED_XN},
-    { "RAM Partition",    0x48000000, 0x02B00000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK_XN},
     { "PIL Reserved",     0x4AB00000, 0x0A400000, AddMem, MEM_RES, WRITE_COMBINEABLE, Reserv, UNCACHED_UNBUFFERED_XN},
     { "DXE Heap",         0x53F00000, 0x02800000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK},
     { "DBI Dump",         0x56700000, 0x00A00000, NoHob , MMAP_IO, INITIALIZED, Conv, UNCACHED_UNBUFFERED_XN},
@@ -35,10 +33,7 @@ static ARM_MEMORY_REGION_DESCRIPTOR_EX gDeviceMemoryDescriptorEx[] = {
     { "RAM Partition",    0x80000000, 0x40000000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
     /* DDR Bank 1 End */
     /* DDR Bank 2 Start */
-    //{ "RAM Partition",    0xC0000000, 0x33C00000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
-    /*Reserved, let it be empty for now, 0xf3c00000 -> 0x100000000, Size 0xC400000 */
-    //{ "RAM Partition",   0x100000000, 0x3b400000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
-    /*Reserved, let it be empty for now, 0x13b400000 -> 0x140000000, Size 0x4C00000 */
+    { "RAM Partition",    0xC0000000, 0x80000000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
 
 //--------------------- Other ---------------------
     { "RPM_SS_MSG_RAM",   0x045F0000, 0x00007000, NoHob, MMAP_IO, INITIALIZED, Conv, NS_DEVICE},

@@ -32,7 +32,7 @@
 
 [PcdsFixedAtBuild.common]
   # Platform-specific
-  gArmTokenSpaceGuid.PcdSystemMemorySize|0xE5000000 #0x100000000        # 4GB Size
+  gArmTokenSpaceGuid.PcdSystemMemorySize|0x100000000        # 4GB Size
 
   # SMBIOS
   gSurfaceDuoFamilyPkgTokenSpaceGuid.PcdSmbiosSystemModel|"Redmi Note 11"
