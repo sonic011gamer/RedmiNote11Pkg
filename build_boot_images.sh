@@ -1,14 +1,13 @@
 #!/bin/bash
 
-cat ./BootShim/BootShim.Epsilon.bin ./Build/SurfaceDuo1-AARCH64/DEBUG_CLANG38/FV/SM8150_EFI.fd ./ImageResources/dummykernel > ./ImageResources/Epsilon/bootpayload.bin
+cat ./BootShim/BootShim.Epsilon.bin ./Build/SurfaceDuo1-AARCH64/DEBUG_CLANG38/FV/SM6225_EFI.fd ./ImageResources/dummykernel > ./ImageResources/Epsilon/bootpayload.bin
 
 python3 ./ImageResources/mkbootimg.py \
   --kernel ./ImageResources/Epsilon/bootpayload.bin \
   --ramdisk ./ImageResources/Epsilon/ramdisk \
   -o ./ImageResources/Epsilon/uefi.img \
   --pagesize 4096 \
-  --header_version 3
- \
+  --header_version 3 \
   --cmdline "" \
   --dtb ./ImageResources/Epsilon/dtb \
   --base 0x0 \
