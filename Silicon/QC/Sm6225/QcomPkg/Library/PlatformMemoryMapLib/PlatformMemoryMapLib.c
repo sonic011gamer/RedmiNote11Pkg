@@ -9,9 +9,10 @@ static ARM_MEMORY_REGION_DESCRIPTOR_EX gDeviceMemoryDescriptorEx[] = {
     { "HYP",              0x45700000, 0x00600000, AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, WRITE_BACK_XN},
     { "Boot Info",        0x45D00000, 0x00020000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK_XN},
 //  { "AOP CMD DB",       0x85F00000, 0x00040000, AddMem, MEM_RES, WRITE_COMBINEABLE, Reserv, UNCACHED_UNBUFFERED_XN},
+    { "RAM Partition",    0x45F40000, 0x000BF000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
     { "SMEM",             0x46000000, 0x00200000, AddMem, MEM_RES, WRITE_COMBINEABLE, Reserv, UNCACHED_UNBUFFERED_XN},
+    { "RAM Partition",    0x48000000, 0x02B00000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
     { "PIL Reserved",     0x4AB00000, 0x0A400000, AddMem, MEM_RES, WRITE_COMBINEABLE, Reserv, UNCACHED_UNBUFFERED_XN},
-    { "DXE Heap",         0x53F00000, 0x02800000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK},
     { "DBI Dump",         0x56700000, 0x00A00000, NoHob , MMAP_IO, INITIALIZED, Conv, UNCACHED_UNBUFFERED_XN},
     { "Sched Heap",       0x57100000, 0x00400000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK_XN},
     { "Display Reserved", 0x5C000000, 0x01000000, AddMem, MEM_RES, SYS_MEM_CAP, Reserv, WRITE_THROUGH_XN},
@@ -26,7 +27,8 @@ static ARM_MEMORY_REGION_DESCRIPTOR_EX gDeviceMemoryDescriptorEx[] = {
     { "Log Buffer",       0x5FFF7000, 0x00008000, AddMem, SYS_MEM, SYS_MEM_CAP, RtData, WRITE_BACK_XN},
     { "Info Blk",         0x5FFFF000, 0x00001000, AddMem, SYS_MEM, SYS_MEM_CAP, RtData, WRITE_BACK_XN}, 
     /* Memory hole (0x60000000 - 0x638FFFFF) */
-    { "RAM Partition",    0x63900000, 0x1A400000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
+    { "DXE Heap",         0x63900000, 0x04800000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
+    { "RAM Partition",    0x68100000, 0x15c00000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
     /* DDR Bank 0 End */
     /* Carveout Region (0x7DD00000 -> 0x80000000, size 0x02300000) */
     /* DDR Bank 1 Start */
