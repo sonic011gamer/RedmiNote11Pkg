@@ -17,12 +17,6 @@ APRIORI DXE {
     INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
     INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
 
-    FILE DRIVER = 2d7a83e3-e343-4ffb-9109-631f2ee11694  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2d7a83e3-e343-4ffb-9109-631f2ee11694/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2d7a83e3-e343-4ffb-9109-631f2ee11694/section1.pe
-      SECTION UI = "ScmDxe"
-    
-    }   
     FILE DRIVER = 6925fad3-e243-4b69-ad61-3f978c8abc60  {
       SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-6925fad3-e243-4b69-ad61-3f978c8abc60/section0.dxe.depex
       SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-6925fad3-e243-4b69-ad61-3f978c8abc60/section1.pe
