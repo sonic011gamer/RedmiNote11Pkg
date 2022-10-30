@@ -29,6 +29,8 @@ APRIORI DXE {
     INF MdeModulePkg/Universal/PrintDxe/PrintDxe.inf
     INF MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
 
+    INF MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
+    
     INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
     INF MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
 
@@ -38,8 +40,6 @@ APRIORI DXE {
     SECTION UI = "GraphicsConsoleDxe"
 
   }
-
-INF MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
 
         FILE DRIVER = ed15ffd5-bc96-4107-9118-95366600188e  {
           SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-ed15ffd5-bc96-4107-9118-95366600188e/section0.dxe.depex
