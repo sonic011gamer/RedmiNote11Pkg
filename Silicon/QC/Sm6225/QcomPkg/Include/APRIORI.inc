@@ -17,19 +17,6 @@ APRIORI DXE {
     INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
     INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
 
-#    FILE DRIVER = 2d7a83e3-e343-4ffb-9109-631f2ee11694  {
-#      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2d7a83e3-e343-4ffb-9109-631f2ee11694/section0.dxe.depex
-#      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2d7a83e3-e343-4ffb-9109-631f2ee11694/section1.pe
-#      SECTION UI = "ScmDxe"
-#    
-#    }   
-#    FILE DRIVER = 6925fad3-e243-4b69-ad61-3f978c8abc60  {
-#      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-6925fad3-e243-4b69-ad61-3f978c8abc60/section0.dxe.depex
-#      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-6925fad3-e243-4b69-ad61-3f978c8abc60/section1.pe
-#      SECTION UI = "TzDxe"
-#    
-#    }   
-#
     INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
     INF MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
 
@@ -134,13 +121,7 @@ APRIORI DXE {
       SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-8e9bd160-b184-11df-94e2-0800200c9a66/section1.pe
       SECTION UI = "DALSys"
 
-    }   
-    FILE DRIVER = 8bd3b475-401a-4b0b-9315-edee61a1eae5  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-8bd3b475-401a-4b0b-9315-edee61a1eae5/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-8bd3b475-401a-4b0b-9315-edee61a1eae5/section1.pe
-      SECTION UI = "VcsDxe"
-
-    }   
+    }    
     FILE DRIVER = 4db5dea6-5302-4d1a-8a82-677a683b0d29  {
       SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-4db5dea6-5302-4d1a-8a82-677a683b0d29/section0.dxe.depex
       SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-4db5dea6-5302-4d1a-8a82-677a683b0d29/section1.pe
@@ -195,12 +176,6 @@ APRIORI DXE {
       SECTION UI = "DALTLMM"
 
     }   
-    FILE DRIVER = 2a0ecdce-01ae-446e-9ffd-c4217de0340f  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2a0ecdce-01ae-446e-9ffd-c4217de0340f/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2a0ecdce-01ae-446e-9ffd-c4217de0340f/section1.pe
-      SECTION UI = "MinidumpTADxe"
-
-    }
 
     INF SurfaceDuoFamilyPkg/Driver/SimpleFbDxe/SimpleFbDxe.inf
 
