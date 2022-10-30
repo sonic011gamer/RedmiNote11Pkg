@@ -43,7 +43,7 @@
 
 #define UFS_CTX_BANK 1
 
-#define APSS_WDT_BASE 0x17C10000
+#define APSS_WDT_BASE 0x0F017000
 #define APSS_WDT_ENABLE_OFFSET 0x8
 
 #endif /* _PLATFORM_UTILS_H_ */
