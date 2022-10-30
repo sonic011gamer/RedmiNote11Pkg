@@ -1,6 +1,7 @@
 # First, install the PCD driver and call DxeInit
-INF MdeModulePkg/Core/Dxe/DxeMain.inf
 INF MdeModulePkg/Universal/PCD/Dxe/Pcd.inf
+INF MdeModulePkg/Core/Dxe/DxeMain.inf
+
 
 INF MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf
 INF MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf
