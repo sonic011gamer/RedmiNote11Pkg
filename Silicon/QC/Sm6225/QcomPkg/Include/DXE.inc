@@ -1,38 +1,36 @@
-# First, install the PCD driver and call DxeInit
-INF MdeModulePkg/Universal/PCD/Dxe/Pcd.inf
-INF MdeModulePkg/Core/Dxe/DxeMain.inf
+    # First, install the PCD driver and call DxeInit
+    INF MdeModulePkg/Core/Dxe/DxeMain.inf
+    INF MdeModulePkg/Universal/PCD/Dxe/Pcd.inf
 
 
-INF MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf
-INF MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf
-INF MdeModulePkg/Core/RuntimeDxe/RuntimeDxe.inf
-
-# Next, install cpu protocol and enable the interrupt controller
-INF ArmPkg/Drivers/CpuDxe/CpuDxe.inf
-INF ArmPkg/Drivers/ArmGic/ArmGicDxe.inf
-
-# Core Drivers
-INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
-INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
+    INF MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf
+    INF MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf
     
+    INF ArmPkg/Drivers/CpuDxe/CpuDxe.inf
+    
+    INF MdeModulePkg/Core/RuntimeDxe/RuntimeDxe.inf
 
-INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
-INF MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
+    INF MdeModulePkg/Universal/SecurityStubDxe/SecurityStubDxe.inf
 
-INF MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
+    INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
+    INF MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
 
-INF EmbeddedPkg/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf
+    INF MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
 
-INF EmbeddedPkg/SimpleTextInOutSerial/SimpleTextInOutSerial.inf
- 
-INF MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe.inf
-INF EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf
+    INF EmbeddedPkg/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf
 
-INF MdeModulePkg/Universal/PrintDxe/PrintDxe.inf
-INF MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
+    INF EmbeddedPkg/SimpleTextInOutSerial/SimpleTextInOutSerial.inf
+    
+    INF MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe.inf
+    INF EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf
+    INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
 
-INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
-INF MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
+    INF MdeModulePkg/Universal/PrintDxe/PrintDxe.inf
+    INF MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
+
+    INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
+    INF MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
+
 
   FILE DRIVER = cccb0c28-4b24-11d5-9a5a-0090273fc14d  {
     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-cccb0c28-4b24-11d5-9a5a-0090273fc14d/section0.pe
@@ -63,6 +61,9 @@ INF MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResourc
           SECTION UI = "QcomMpmTimerDxe"
 
         }       
+  INF ArmPkg/Drivers/ArmGic/ArmGicDxe.inf
+  INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
+
         FILE DRIVER = 10e193df-9966-44e7-b17c-59dd831e20fc  {
           SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-10e193df-9966-44e7-b17c-59dd831e20fc/section0.dxe.depex
           SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-10e193df-9966-44e7-b17c-59dd831e20fc/section1.pe
