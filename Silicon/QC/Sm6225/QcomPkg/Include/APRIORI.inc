@@ -17,13 +17,19 @@ APRIORI DXE {
     INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
     INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
 
-    FILE DRIVER = 6925fad3-e243-4b69-ad61-3f978c8abc60  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-6925fad3-e243-4b69-ad61-3f978c8abc60/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-6925fad3-e243-4b69-ad61-3f978c8abc60/section1.pe
-      SECTION UI = "TzDxe"
-    
-    }   
-
+#    FILE DRIVER = 2d7a83e3-e343-4ffb-9109-631f2ee11694  {
+#      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2d7a83e3-e343-4ffb-9109-631f2ee11694/section0.dxe.depex
+#      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2d7a83e3-e343-4ffb-9109-631f2ee11694/section1.pe
+#      SECTION UI = "ScmDxe"
+#    
+#    }   
+#    FILE DRIVER = 6925fad3-e243-4b69-ad61-3f978c8abc60  {
+#      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-6925fad3-e243-4b69-ad61-3f978c8abc60/section0.dxe.depex
+#      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-6925fad3-e243-4b69-ad61-3f978c8abc60/section1.pe
+#      SECTION UI = "TzDxe"
+#    
+#    }   
+#
     INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
     INF MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
 
@@ -54,13 +60,6 @@ APRIORI DXE {
       SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-ed15ffd5-bc96-4107-9118-95366600188e/section0.dxe.depex
       SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-ed15ffd5-bc96-4107-9118-95366600188e/section1.pe
       SECTION UI = "FontDxe"
-
-    }
-
-    FILE DRIVER = 90a49afd-422f-08ae-9611-e788d3804845  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-90a49afd-422f-08ae-9611-e788d3804845/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-90a49afd-422f-08ae-9611-e788d3804845/section1.pe
-      SECTION UI = "EnvDxe"
 
     }
 
