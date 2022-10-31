@@ -56,11 +56,11 @@
       SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-e43128a8-8692-42b6-8afa-676158578d18/section1.pe
       SECTION UI = "ULogDxe"
     }       
-    FILE DRIVER = cb29f4d1-7f37-4692-a416-93e82e219711  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-cb29f4d1-7f37-4692-a416-93e82e219711/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-cb29f4d1-7f37-4692-a416-93e82e219711/section1.pe
-      SECTION UI = "NpaDxe"
-    }   
+#  FILE DRIVER = cb29f4d1-7f37-4692-a416-93e82e219711  {
+#    SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-cb29f4d1-7f37-4692-a416-93e82e219711/section0.dxe.depex
+#    SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-cb29f4d1-7f37-4692-a416-93e82e219711/section1.pe
+#    SECTION UI = "NpaDxe"
+#  }   
     FILE DRIVER = 8bd3b475-401a-4b0b-9315-edee61a1eae5  {
       SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-8bd3b475-401a-4b0b-9315-edee61a1eae5/section0.dxe.depex
       SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-8bd3b475-401a-4b0b-9315-edee61a1eae5/section1.pe
