@@ -100,12 +100,12 @@ void ResetFb(void)
 void FbConReset(void)
 {
 	// Reset position.
-	m_Position.x = 0;
-	m_Position.y = 0;
+	p_Position->x = 0;
+	p_Position->y = 0;
 
-	// Calc max position.
-	m_MaxPosition.x = gWidth / (FONT_WIDTH + 1);
-	m_MaxPosition.y = (gHeight - 1) / FONT_HEIGHT;
+  // Calc max position.
+  m_MaxPosition.x = gWidth / (FONT_WIDTH + 1);
+  m_MaxPosition.y = (gHeight - 1) / FONT_HEIGHT;
 
 	// Reset color.
 	m_Color.Foreground = FB_BGRA8888_WHITE;
