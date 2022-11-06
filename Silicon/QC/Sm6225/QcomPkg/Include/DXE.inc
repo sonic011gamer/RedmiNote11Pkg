@@ -110,7 +110,7 @@
 
     FILE DRIVER = 0d35cd8e-97ea-4f9a-96af-0f0d89f76567  {
       SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-0d35cd8e-97ea-4f9a-96af-0f0d89f76567/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-0d35cd8e-97ea-4f9a-96af-0f0d89f76567/section1.pe
+      SECTION PE32 =  SurfaceDuo1Pkg/Patched/UFSDxe.efi # RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-0d35cd8e-97ea-4f9a-96af-0f0d89f76567/section1.pe
       SECTION UI = "UFSDxe"
 
     }  
