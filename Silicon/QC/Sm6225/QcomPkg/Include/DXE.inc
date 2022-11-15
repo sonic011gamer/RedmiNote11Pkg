@@ -75,7 +75,7 @@
     }
     FILE DRIVER = 4db5dea6-5302-4d1a-8a82-677a683b0d29  {
       SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-4db5dea6-5302-4d1a-8a82-677a683b0d29/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-4db5dea6-5302-4d1a-8a82-677a683b0d29/section1.pe
+      SECTION PE32 =  QcomPkg/PatchedDxe/ClockDxePatch.efi # RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-4db5dea6-5302-4d1a-8a82-677a683b0d29/section1.pe
       SECTION UI = "ClockDxe"
     }       
 
