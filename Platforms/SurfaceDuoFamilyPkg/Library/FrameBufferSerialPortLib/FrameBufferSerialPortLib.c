@@ -26,7 +26,7 @@
 // 1000000 = 1s
 //  500000 = 0.5s
 //  100000 = 0.1s
-UINTN delay = 1000000; // 0.03s
+UINTN delay = 50; // 0.03s
 
 ARM_MEMORY_REGION_DESCRIPTOR_EX DisplayMemoryRegion;
 

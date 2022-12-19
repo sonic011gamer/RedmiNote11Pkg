@@ -4,7 +4,7 @@ cat ./BootShim/BootShim.Epsilon.bin ./Build/SurfaceDuo1-AARCH64/DEBUG_CLANG38/FV
 
 python3 ./ImageResources/mkbootimg.py \
   --kernel ./ImageResources/Epsilon/bootpayload.bin \
-  --ramdisk ./ImageResources/Epsilon/ramdisk \
+  --ramdisk ./ImageResources/dummykernel \
   -o ./ImageResources/Epsilon/uefi.img \
   --pagesize 4096 \
   --header_version 3 \
