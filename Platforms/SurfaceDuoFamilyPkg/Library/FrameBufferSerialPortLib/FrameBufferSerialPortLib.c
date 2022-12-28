@@ -1,16 +1,3 @@
-/*################################################################################################
-#
-# added delay after each line printed on screen, 16 feb 2012, SERDELIUK
-# added \v and \a escape sequences to control the color of text output between control chars
-# between \v colored green \v
-# between \a colored red \a
-# \a for alert and \v for victory :D
-#
-# this library has an unknown author, please let me know if you know the initial author
-#
-################################################################################################*/
-
-
 #include <Library/TimerLib.h>
 #include <PiDxe.h>
 
@@ -22,6 +9,7 @@
 
 #include <Resources/FbColor.h>
 #include <Resources/font5x12.h>
+
 #include <Library/FrameBufferSerialPortLib.h>
 // 1000000 = 1s
 //  500000 = 0.5s
@@ -57,7 +45,7 @@ SerialPortInitialize(VOID)
 {
 	UINTN InterruptState = 0;
 
-	// Prevent dup initialization
+  // Prevent dup initialization
   if (m_Initialized)
     return RETURN_SUCCESS;
 
@@ -66,56 +54,51 @@ SerialPortInitialize(VOID)
 	// Interrupt Disable
 	InterruptState = ArmGetInterruptState();
 	ArmDisableInterrupts();
-	// Reset console
-	FbConReset();
+  // Reset console
+  FbConReset();
 
-	// Set flag
-	m_Initialized = TRUE;
+  // Set flag
+  m_Initialized = TRUE;
 
 	if (InterruptState) ArmEnableInterrupts();
-	return RETURN_SUCCESS;
+  return RETURN_SUCCESS;
 }
-
 
 void ResetFb(void)
 {
-	// Clear current screen.
+  // Clear current screen.
   char *Pixels  = (void *)DisplayMemoryRegion.Address;
-	UINTN BgColor = FB_BGRA8888_BLACK;
+  UINTN BgColor = FB_BGRA8888_BLACK;
 
-	// Set to black color.
+  // Set to black color.
   for (UINTN i = 0; i < gWidth; i++) {
     for (UINTN j = 0; j < gHeight; j++) {
-			BgColor = FB_BGRA8888_BLACK;
-			// Set pixel bit
+      BgColor = FB_BGRA8888_BLACK;
+      // Set pixel bit
       for (UINTN p = 0; p < (gBpp / 8); p++) {
-				*Pixels = (unsigned char)BgColor;
-				BgColor = BgColor >> 8;
-				Pixels++;
-			}
-		}
-	}
+        *Pixels = (unsigned char)BgColor;
+        BgColor = BgColor >> 8;
+        Pixels++;
+      }
+    }
+  }
 }
 
 void FbConReset(void)
 {
-	// Reset position.
-	p_Position->x = 0;
-	p_Position->y = 0;
-
   // Calc max position.
   m_MaxPosition.x = gWidth / (FONT_WIDTH + 1);
   m_MaxPosition.y = (gHeight - 1) / FONT_HEIGHT;
 
-	// Reset color.
-	m_Color.Foreground = FB_BGRA8888_WHITE;
-	m_Color.Background = FB_BGRA8888_BLACK;
+  // Reset color.
+  m_Color.Foreground = FB_BGRA8888_WHITE;
+  m_Color.Background = FB_BGRA8888_BLACK;
 }
 
 void FbConPutCharWithFactor(char c, int type, unsigned scale_factor)
 {
   char *Pixels;
-	if (!m_Initialized) return;
+
 paint:
 
   if ((unsigned char)c > 127)
@@ -123,49 +106,30 @@ paint:
 
   if ((unsigned char)c < 32) {
     if (c == '\n') {
-			goto newline;
-		}
+      goto newline;
+    }
     else if (c == '\r') {
       p_Position->x = 0;
-			return;
-		}
-		else if (c == '\a')
-		{
-			if (m_Color.Foreground == FB_BGRA8888_WHITE)
-			{
-			    m_Color.Foreground = FB_BGRA8888_RED;
-			} else {
-			    m_Color.Foreground = FB_BGRA8888_WHITE;
-			}
-		}
-		else if (c == '\v')
-		{
-			if (m_Color.Foreground == FB_BGRA8888_WHITE)
-			{
-			    m_Color.Foreground = FB_BGRA8888_GREEN;
-			} else {
-			    m_Color.Foreground = FB_BGRA8888_WHITE;
-			}
-		}
-		else
-		{
-			return;
-		}
-	}
+      return;
+    }
+    else {
+      return;
+    }
+  }
 
-	// Save some space
+  // Save some space
   if (p_Position->x == 0 && (unsigned char)c == ' ' &&
       type != FBCON_SUBTITLE_MSG && type != FBCON_TITLE_MSG)
-		return;
+    return;
 
-	BOOLEAN intstate = ArmGetInterruptState();
-	ArmDisableInterrupts();
+  BOOLEAN intstate = ArmGetInterruptState();
+  ArmDisableInterrupts();
 
   Pixels = (void *)DisplayMemoryRegion.Address;
   Pixels += p_Position->y * ((gBpp / 8) * FONT_HEIGHT * gWidth);
   Pixels += p_Position->x * scale_factor * ((gBpp / 8) * (FONT_WIDTH + 1));
 
-	FbConDrawglyph(
+  FbConDrawglyph(
       Pixels, gWidth, (gBpp / 8), font5x12 + (c - 32) * 2, scale_factor);
 
   p_Position->x++;
@@ -175,7 +139,7 @@ paint:
 
   if (intstate)
     ArmEnableInterrupts();
-	return;
+  return;
 
 newline:
 	//  delay....
@@ -184,20 +148,19 @@ newline:
   p_Position->y += scale_factor;
   p_Position->x = 0;
   if (p_Position->y >= m_MaxPosition.y - scale_factor) {
-//		FbConScrollUp();
-		ResetFb();
-		FbConFlush();
+    ResetFb();
+    FbConFlush();
     p_Position->y = 0;
 
     if (intstate)
       ArmEnableInterrupts();
-		goto paint;
-	}
+    goto paint;
+  }
   else {
-		FbConFlush();
+    FbConFlush();
     if (intstate)
       ArmEnableInterrupts();
-	}
+  }
 }
 
 void FbConDrawglyph(
@@ -207,85 +170,85 @@ void FbConDrawglyph(
   char *       bg_pixels = pixels;
   unsigned     x, y, i, j, k;
   unsigned     data, temp;
-	unsigned int fg_color = m_Color.Foreground;
-	unsigned int bg_color = m_Color.Background;
-	stride -= FONT_WIDTH * scale_factor;
+  unsigned int fg_color = m_Color.Foreground;
+  unsigned int bg_color = m_Color.Background;
+  stride -= FONT_WIDTH * scale_factor;
 
   for (y = 0; y < FONT_HEIGHT / 2; ++y) {
     for (i = 0; i < scale_factor; i++) {
       for (x = 0; x < FONT_WIDTH; ++x) {
         for (j = 0; j < scale_factor; j++) {
-					bg_color = m_Color.Background;
+          bg_color = m_Color.Background;
           for (k = 0; k < bpp; k++) {
-						*bg_pixels = (unsigned char)bg_color;
+            *bg_pixels = (unsigned char)bg_color;
             bg_color   = bg_color >> 8;
-						bg_pixels++;
-					}
-				}
-			}
-			bg_pixels += (stride * bpp);
-		}
-	}
+            bg_pixels++;
+          }
+        }
+      }
+      bg_pixels += (stride * bpp);
+    }
+  }
 
   for (y = 0; y < FONT_HEIGHT / 2; ++y) {
     for (i = 0; i < scale_factor; i++) {
       for (x = 0; x < FONT_WIDTH; ++x) {
         for (j = 0; j < scale_factor; j++) {
-					bg_color = m_Color.Background;
+          bg_color = m_Color.Background;
           for (k = 0; k < bpp; k++) {
-						*bg_pixels = (unsigned char)bg_color;
+            *bg_pixels = (unsigned char)bg_color;
             bg_color   = bg_color >> 8;
-						bg_pixels++;
-					}
-				}
-			}
-			bg_pixels += (stride * bpp);
-		}
-	}
+            bg_pixels++;
+          }
+        }
+      }
+      bg_pixels += (stride * bpp);
+    }
+  }
 
-	data = glyph[0];
+  data = glyph[0];
   for (y = 0; y < FONT_HEIGHT / 2; ++y) {
-		temp = data;
+    temp = data;
     for (i = 0; i < scale_factor; i++) {
-			data = temp;
+      data = temp;
       for (x = 0; x < FONT_WIDTH; ++x) {
         if (data & 1) {
           for (j = 0; j < scale_factor; j++) {
-						fg_color = m_Color.Foreground;
+            fg_color = m_Color.Foreground;
             for (k = 0; k < bpp; k++) {
               *pixels  = (unsigned char)fg_color;
-							fg_color = fg_color >> 8;
-							pixels++;
-						}
-					}
-				}
+              fg_color = fg_color >> 8;
+              pixels++;
+            }
+          }
+        }
         else {
           for (j = 0; j < scale_factor; j++) {
-						pixels = pixels + bpp;
-					}
-				}
-				data >>= 1;
-			}
-			pixels += (stride * bpp);
-		}
-	}
+            pixels = pixels + bpp;
+          }
+        }
+        data >>= 1;
+      }
+      pixels += (stride * bpp);
+    }
+  }
 
-	data = glyph[1];
+  data = glyph[1];
   for (y = 0; y < FONT_HEIGHT / 2; ++y) {
-		temp = data;
+    temp = data;
     for (i = 0; i < scale_factor; i++) {
-			data = temp;
+      data = temp;
       for (x = 0; x < FONT_WIDTH; ++x) {
         if (data & 1) {
           for (j = 0; j < scale_factor; j++) {
-						fg_color = m_Color.Foreground;
+            fg_color = m_Color.Foreground;
             for (k = 0; k < bpp; k++) {
               *pixels  = (unsigned char)fg_color;
-							fg_color = fg_color >> 8;
-							pixels++;
-						}
-					}
-				}
+              fg_color = fg_color >> 8;
+              pixels++;
+            }
+          }
+        }
         else {
           for (j = 0; j < scale_factor; j++) {
             pixels = pixels + bpp;
