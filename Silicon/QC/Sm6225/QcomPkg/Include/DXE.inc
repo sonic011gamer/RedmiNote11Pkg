@@ -1,328 +1,235 @@
-    # First, install the PCD driver and call DxeInit
-    INF MdeModulePkg/Core/Dxe/DxeMain.inf
-    INF MdeModulePkg/Universal/PCD/Dxe/Pcd.inf
 
-#    FILE DRIVER = 90a49afd-422f-08ae-9611-e788d3804845  {
-#      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-90a49afd-422f-08ae-9611-e788d3804845/section0.dxe.depex
-#      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-90a49afd-422f-08ae-9611-e788d3804845/section1.pe
-#      SECTION UI = "EnvDxe"
-#
-#    }
-    INF MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf
-    INF MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf
+  # First, install the PCD driver and call DxeInit
+  INF MdeModulePkg/Core/Dxe/DxeMain.inf
+  INF MdeModulePkg/Universal/PCD/Dxe/Pcd.inf
+  
+# INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/EnvDxe/EnvDxe.inf
+  INF MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf
+  INF MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf
+  INF MdeModulePkg/Core/RuntimeDxe/RuntimeDxe.inf
+  INF ArmPkg/Drivers/CpuDxe/CpuDxe.inf
+  INF ArmPkg/Drivers/ArmGic/ArmGicDxe.inf
+  INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
+  INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/SmemDxe/SmemDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/DALSYSDxe/DALSYSDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/HWIODxe/HWIODxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/ChipInfoDxe/ChipInfoDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/PlatformInfoDxe/PlatformInfoDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/HALIOMMUDxe/HALIOMMUDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/GLinkDxe/GLinkDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/ULogDxe/ULogDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/NpaDxe/NpaDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/VcsDxe/VcsDxe.inf
+  # INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/ClockDxe/ClockDxe.inf
+  INF QcomPkg/PatchedBinaries/ClockDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/ShmBridgeDxe/ShmBridgeDxeLA.inf
+  # INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/TzDxe/ScmDxeLA.inf
+  FILE DRIVER = 4b4973ee-401b-4f36-a6a9-533dfccdfc33 {
+          SECTION PE32 = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/TzDxe/ScmDxeLA.efi
+          SECTION UI = "ScmDxeLA"
+  }
+  # INF MdeModulePkg/Universal/Disk/DiskIoDxe/DiskIoDxe.inf
+  FILE DRIVER = 6b38f7b4-ad98-40e9-9093-aca2b5a253c4 {
+          SECTION PE32 = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/MdeModulePkg/Universal/Disk/DiskIoDxe/DiskIoDxe.efi
+          SECTION UI = "DiskIoDxe"
+  }
+  INF MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf
+  INF MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf
+  INF MdeModulePkg/Universal/FvSimpleFileSystemDxe/FvSimpleFileSystemDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/SdccDxe/SdccDxe.inf
+  # INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/UFSDxe/UFSDxe.inf
+  INF QcomPkg/PatchedBinaries/UFSDxe.inf
+  INF FatPkg/EnhancedFatDxe/Fat.inf
+  # INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/TzDxe/TzDxeLA.inf
+  FILE DRIVER = cf6dfc66-14ab-4e13-84db-9c02912d1404 {
+          SECTION PE32 = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/TzDxe/TzDxeLA.efi
+          SECTION UI = "TzDxeLA"
+  }
+  # INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/VariableDxe/VariableDxe.inf
+  INF MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/QcomWDogDxe/QcomWDogDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/TLMMDxe/TLMMDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/SPMIDxe/SPMIDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/ResetRuntimeDxe/ResetRuntimeDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/PmicDxe/PmicDxeLa.inf
+#  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/PILDxe/PILDxe.inf
     
-    INF MdeModulePkg/Core/RuntimeDxe/RuntimeDxe.inf
-
-    INF ArmPkg/Drivers/CpuDxe/CpuDxe.inf
+  INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf
+  INF EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf
+  INF MdeModulePkg/Universal/PrintDxe/PrintDxe.inf
+  INF MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
+  INF MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
+  INF MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/FontDxe/FontDxe.inf
+  # INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/QcomBds/QcomBds.inf
+  INF MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
+ 
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/I2CDxe/I2CDxe.inf
     
-    INF ArmPkg/Drivers/ArmGic/ArmGicDxe.inf
-    INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
-    INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/AdcDxe/AdcDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/UsbPwrCtrlDxe/UsbPwrCtrlDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/QcomChargerDxe/QcomChargerDxeLA.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/ChargerExDxe/ChargerExDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/UsbfnDwc3Dxe/UsbfnDwc3Dxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
+  # INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/ButtonsDxe/ButtonsDxe.inf
+  INF QcomPkg/PatchedBinaries/ButtonsDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/TsensDxe/TsensDxe.inf
+  INF SurfaceDuoFamilyPkg/Driver/GpioButtons/GpioButtons.inf
+  INF SurfaceDuoFamilyPkg/Driver/SimpleFbDxe/SimpleFbDxe.inf
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/GpiDxe/GpiDxe.inf  
+  FILE FREEFORM = 3adf8dda-1850-44c5-8c63-bb991849bc6f {
+      SECTION PE32 = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/HashDxe/HashDxe.efi
+      SECTION UI = "HashDxe"
+  }
+  FILE FREEFORM = 5f0937cd-73f9-445e-b320-bb6fd5d3cbde {
+      SECTION PE32 = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/CipherDxe/CipherDxe.efi
+      SECTION UI = "CipherDxe"
+  }
+  FILE FREEFORM = 20583a66-3c26-4d9e-9a8c-e2dfa2914015 {
+      SECTION PE32 = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/MacDxe/MacDxe.efi
+      SECTION UI = "MacDxe"
+  }
 
-    FILE DRIVER = f541d663-4a48-40aa-aabf-ff158ccae34c  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-f541d663-4a48-40aa-aabf-ff158ccae34c/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-f541d663-4a48-40aa-aabf-ff158ccae34c/section1.pe
-      SECTION UI = "SmemDxe"
-    }       
-    FILE DRIVER = 8e9bd160-b184-11df-94e2-0800200c9a66  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-8e9bd160-b184-11df-94e2-0800200c9a66/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-8e9bd160-b184-11df-94e2-0800200c9a66/section1.pe
-      SECTION UI = "DALSys"
-    }       
-    FILE DRIVER = af9763a2-033b-4109-8e17-56a98d380c92  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-af9763a2-033b-4109-8e17-56a98d380c92/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-af9763a2-033b-4109-8e17-56a98d380c92/section1.pe
-      SECTION UI = "HWIODxeDriver"
-    }       
-    FILE DRIVER = 10e193df-9966-44e7-b17c-59dd831e20fc  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-10e193df-9966-44e7-b17c-59dd831e20fc/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-10e193df-9966-44e7-b17c-59dd831e20fc/section1.pe
-      SECTION UI = "ChipInfo"
-    }       
-    FILE DRIVER = b105211b-bbbd-4add-a3b0-d1cf4a52154c  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-b105211b-bbbd-4add-a3b0-d1cf4a52154c/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-b105211b-bbbd-4add-a3b0-d1cf4a52154c/section1.pe
-      SECTION UI = "PlatformInfoDxeDriver"
-    }     
-
-    FILE DRIVER = 9a00771f-36d4-4dd5-8916-c48ed9b16b86  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-9a00771f-36d4-4dd5-8916-c48ed9b16b86/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-9a00771f-36d4-4dd5-8916-c48ed9b16b86/section1.pe
-      SECTION UI = "HALIOMMU"
-    }     
-
-    FILE DRIVER = 7942a7eb-b7d5-4e2e-b908-831e4de55b58  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-7942a7eb-b7d5-4e2e-b908-831e4de55b58/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-7942a7eb-b7d5-4e2e-b908-831e4de55b58/section1.pe
-      SECTION UI = "GlinkDxe"
-    }    
-    
-    FILE DRIVER = e43128a8-8692-42b6-8afa-676158578d18  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-e43128a8-8692-42b6-8afa-676158578d18/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-e43128a8-8692-42b6-8afa-676158578d18/section1.pe
-      SECTION UI = "ULogDxe"
-    }       
-   FILE DRIVER = cb29f4d1-7f37-4692-a416-93e82e219711  {
-     SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-cb29f4d1-7f37-4692-a416-93e82e219711/section0.dxe.depex
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-cb29f4d1-7f37-4692-a416-93e82e219711/section1.pe
-     SECTION UI = "NpaDxe"
-   }   
-    FILE DRIVER = 8bd3b475-401a-4b0b-9315-edee61a1eae5  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-8bd3b475-401a-4b0b-9315-edee61a1eae5/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-8bd3b475-401a-4b0b-9315-edee61a1eae5/section1.pe
-      SECTION UI = "VcsDxe"
-
-    }
-    FILE DRIVER = 4db5dea6-5302-4d1a-8a82-677a683b0d29  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-4db5dea6-5302-4d1a-8a82-677a683b0d29/section0.dxe.depex
-      SECTION PE32 =  QcomPkg/PatchedDxe/ClockDxe.efi # RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-4db5dea6-5302-4d1a-8a82-677a683b0d29/section1.pe
-      SECTION UI = "ClockDxe"
-    }       
-
-    FILE DRIVER = 9c1eb71f-dd6c-4ed5-9f6a-5cc0ca789f16  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-9c1eb71f-dd6c-4ed5-9f6a-5cc0ca789f16/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-9c1eb71f-dd6c-4ed5-9f6a-5cc0ca789f16/section1.pe
-      SECTION UI = "ShmBridgeDxe"
-    }
-    FILE DRIVER = 2d7a83e3-e343-4ffb-9109-631f2ee11694  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2d7a83e3-e343-4ffb-9109-631f2ee11694/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2d7a83e3-e343-4ffb-9109-631f2ee11694/section1.pe
-      SECTION UI = "ScmDxe"
-
-    }
-
-    FILE DRIVER = 6b38f7b4-ad98-40e9-9093-aca2b5a253c4  {
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-6b38f7b4-ad98-40e9-9093-aca2b5a253c4/section0.pe
-      SECTION UI = "DiskIoDxe"
-    }
-   INF MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf
-   INF MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf
-   INF MdeModulePkg/Universal/FvSimpleFileSystemDxe/FvSimpleFileSystemDxe.inf
-    FILE DRIVER = f10f76db-42c1-533f-34a8-69be24653110  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-f10f76db-42c1-533f-34a8-69be24653110/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-f10f76db-42c1-533f-34a8-69be24653110/section1.pe
-      SECTION UI = "SdccDxe"
-
-    }      
-
-    FILE DRIVER = 0d35cd8e-97ea-4f9a-96af-0f0d89f76567  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-0d35cd8e-97ea-4f9a-96af-0f0d89f76567/section0.dxe.depex
-      SECTION PE32 = QcomPkg/PatchedDxe/UFSDxe.efi # RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-0d35cd8e-97ea-4f9a-96af-0f0d89f76567/section1.pe
-      SECTION UI = "UFSDxe"
-
-    }  
-
-   INF FatPkg/EnhancedFatDxe/Fat.inf
-
-    FILE DRIVER = 6925fad3-e243-4b69-ad61-3f978c8abc60  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-6925fad3-e243-4b69-ad61-3f978c8abc60/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-6925fad3-e243-4b69-ad61-3f978c8abc60/section1.pe
-      SECTION UI = "TzDxe"
-
-    }
-
-#   FILE DRIVER = 2b0ecdce-01ae-446e-9ffd-c4217de0340f  {
-#     SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2b0ecdce-01ae-446e-9ffd-c4217de0340f/section0.dxe.depex
-#     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2b0ecdce-01ae-446e-9ffd-c4217de0340f/section1.pe
-#     SECTION UI = "VariableDxe"
-#   }
-    INF MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
-    
-    FILE DRIVER = 040e1e61-0afb-411b-9ec9-00f3fc59cc13  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-040e1e61-0afb-411b-9ec9-00f3fc59cc13/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-040e1e61-0afb-411b-9ec9-00f3fc59cc13/section1.pe
-      SECTION UI = "QcomWDogDxe"
-    }
-
-    FILE DRIVER = 8681cc5a-0df6-441e-b4b8-e915c538f067  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-8681cc5a-0df6-441e-b4b8-e915c538f067/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-8681cc5a-0df6-441e-b4b8-e915c538f067/section1.pe
-      SECTION UI = "DALTLMM"
-    }      
-
-    FILE DRIVER = 2a7b4bef-80cd-49e1-b473-374ba4d673fc  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2a7b4bef-80cd-49e1-b473-374ba4d673fc/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2a7b4bef-80cd-49e1-b473-374ba4d673fc/section1.pe
-      SECTION UI = "SPMI"
-    }      
-
-   INF MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe.inf
-
-    FILE DRIVER = 5776232e-082d-4b75-9a0e-fe1d13f7a5d9  {
-      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-5776232e-082d-4b75-9a0e-fe1d13f7a5d9/section0.dxe.depex
-      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-5776232e-082d-4b75-9a0e-fe1d13f7a5d9/section1.pe
-      SECTION UI = "PmicDxe"
-    }       
-#    FILE DRIVER = 1d317734-4083-47c6-83ea-e3a42f2a6bff  {
-#      SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-1d317734-4083-47c6-83ea-e3a42f2a6bff/section0.dxe.depex
-#      SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-1d317734-4083-47c6-83ea-e3a42f2a6bff/section1.pe
-#      SECTION UI = "PILDxe"
-#    }       
-   INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
-   INF EmbeddedPkg/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf
-   INF EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf
-   INF MdeModulePkg/Universal/PrintDxe/PrintDxe.inf
-   INF MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
-   INF MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
-   INF MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
-   FILE DRIVER = ed15ffd5-bc96-4107-9118-95366600188e  {
-     SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-ed15ffd5-bc96-4107-9118-95366600188e/section0.dxe.depex
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-ed15ffd5-bc96-4107-9118-95366600188e/section1.pe
-     SECTION UI = "FontDxe"
-   }       
-  INF MdeModulePkg/Universal/BdsDxe/BdsDxe.inf     
-   FILE DRIVER = 04de8591-d2b3-4077-bbbe-b12070094eb6  {
-     SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-04de8591-d2b3-4077-bbbe-b12070094eb6/section0.dxe.depex
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-04de8591-d2b3-4077-bbbe-b12070094eb6/section1.pe
-     SECTION UI = "I2C"
-   }       
-   FILE DRIVER = 5a5cb8ca-9382-4e0c-b383-77fb517cd9eb  {
-     SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-5a5cb8ca-9382-4e0c-b383-77fb517cd9eb/section0.dxe.depex
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-5a5cb8ca-9382-4e0c-b383-77fb517cd9eb/section1.pe
-     SECTION UI = "AdcDxe"
-   }       
-   FILE DRIVER = 11faed4c-b21f-4d88-8e48-c4c28a1e50df  {
-     SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-11faed4c-b21f-4d88-8e48-c4c28a1e50df/section0.dxe.depex
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-11faed4c-b21f-4d88-8e48-c4c28a1e50df/section1.pe
-     SECTION UI = "UsbPwrCtrlDxe"
-   }       
-    FILE DRIVER = 4bce7f36-428e-4393-99e3-7e0844404dba  {
-     SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-4bce7f36-428e-4393-99e3-7e0844404dba/section0.dxe.depex
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-4bce7f36-428e-4393-99e3-7e0844404dba/section1.pe
-     SECTION UI = "QcomChargerDxeLA"
-   }       
-   FILE DRIVER = 2e3042f3-2bb9-463f-8866-56d75b7c4ab0  {
-     SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2e3042f3-2bb9-463f-8866-56d75b7c4ab0/section0.dxe.depex
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-2e3042f3-2bb9-463f-8866-56d75b7c4ab0/section1.pe
-     SECTION UI = "ChargerExDxe"
-   }       
-   FILE DRIVER = 94f8a6a7-dc34-4101-88c1-99179cceae83  {
-     SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-94f8a6a7-dc34-4101-88c1-99179cceae83/section0.dxe.depex
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-94f8a6a7-dc34-4101-88c1-99179cceae83/section1.pe
-     SECTION UI = "UsbfnDwc3Dxe"
-   }       
-   FILE DRIVER = cd823a4d-7dec-4531-ae5d-4134fa4127b8  {
-     SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-cd823a4d-7dec-4531-ae5d-4134fa4127b8/section0.dxe.depex
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-cd823a4d-7dec-4531-ae5d-4134fa4127b8/section1.pe
-     SECTION UI = "UsbConfigDxe"
-   }       
-   FILE DRIVER = 5bd181db-0487-4f1a-ae73-820e165611b3  {
-     SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-5bd181db-0487-4f1a-ae73-820e165611b3/section0.dxe.depex
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-5bd181db-0487-4f1a-ae73-820e165611b3/section1.pe
-     SECTION UI = "ButtonsDxe"
-   }
-   FILE DRIVER = f09ad92e-485c-9cdb-3e05-3385c38f94cc  {
-     SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-f09ad92e-485c-9cdb-3e05-3385c38f94cc/section0.dxe.depex
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-f09ad92e-485c-9cdb-3e05-3385c38f94cc/section1.pe
-     SECTION UI = "TsensDxe"
-   }   
-  INF SurfaceDuoFamilyPkg/Driver/SimpleFbDxe/SimpleFbDxe.inf 
-   FILE DRIVER = 569ea0de-b557-4043-84cf-01103fe516e5  {
-     SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-569ea0de-b557-4043-84cf-01103fe516e5/section0.dxe.depex
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-569ea0de-b557-4043-84cf-01103fe516e5/section1.pe
-     SECTION UI = "GpiDxe"
-   }  
-   FILE DRIVER = 3adf8dda-1850-44c5-8c63-bb991849bc6f  {
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-3adf8dda-1850-44c5-8c63-bb991849bc6f/section0.pe
-     SECTION UI = "HashDxe"
-   }       
-   FILE DRIVER = 5f0937cd-73f9-445e-b320-bb6fd5d3cbde  {
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-5f0937cd-73f9-445e-b320-bb6fd5d3cbde/section0.pe
-     SECTION UI = "CipherDxe"
-   }    
-   FILE DRIVER = 20583a66-3c26-4d9e-9a8c-e2dfa2914015  {
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-20583a66-3c26-4d9e-9a8c-e2dfa2914015/section0.pe
-     SECTION UI = "MacDxe"
-   }      
-   FILE DRIVER = b0d3689e-11f8-43c6-8ece-023a29cec35b  {
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-b0d3689e-11f8-43c6-8ece-023a29cec35b/section0.pe
-     SECTION UI = "RngDxe"
-   }    
-   FILE DRIVER = 7db0793a-4402-4be1-906e-d0fabad2707e  {
-     SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-7db0793a-4402-4be1-906e-d0fabad2707e/section0.dxe.depex
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-7db0793a-4402-4be1-906e-d0fabad2707e/section1.pe
-     SECTION UI = "DDRInfoDxe"
-   }       
-  INF EmbeddedPkg/SimpleTextInOutSerial/SimpleTextInOutSerial.inf
+  FILE FREEFORM = b0d3689e-11f8-43c6-8ece-023a29cec35b {
+      SECTION PE32 = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/SocPkg/DivarPkg/Drivers/RNGDxe/RngDxe.efi
+      SECTION UI = "RngDxe"
+  }
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/DDRInfoDxe/DDRInfoDxe.inf
+   
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/SimpleTextInOutSerialDxe/SimpleTextInOutSerial.inf
   INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
   INF MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
-   FILE DRIVER = cccb0c28-4b24-11d5-9a5a-0090273fc14d  {
-     SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-cccb0c28-4b24-11d5-9a5a-0090273fc14d/section0.pe
-     SECTION UI = "GraphicsConsoleDxe"
-   }
-  FILE DRIVER = 53d39438-814a-4d9c-87c1-07e8c713f4c4  {
-    SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-53d39438-814a-4d9c-87c1-07e8c713f4c4/section0.dxe.depex
-    SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-53d39438-814a-4d9c-87c1-07e8c713f4c4/section1.pe
-    SECTION UI = "QcomMpmTimerDxe"
-  }        
+  INF MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
+
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/QcomMpmTimerDxe/QcomMpmTimerDxe.inf
+  
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/UsbMsdDxe/UsbMsdDxe.inf
+  
   INF MdeModulePkg/Universal/SecurityStubDxe/SecurityStubDxe.inf
-  FILE DRIVER = 5af77f10-90df-4e7e-8325-a17ec09d5443  {
-    SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-5af77f10-90df-4e7e-8325-a17ec09d5443/section0.dxe.depex
-    SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-5af77f10-90df-4e7e-8325-a17ec09d5443/section1.pe
-    SECTION UI = "UsbMsdDxe"
-  }       
-  FILE DRIVER = 3299a266-15f0-4346-8318-716336736d3e  {
-    SECTION DXE_DEPEX = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-3299a266-15f0-4346-8318-716336736d3e/section0.dxe.depex
-    SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-3299a266-15f0-4346-8318-716336736d3e/section1.pe
-    SECTION UI = "UsbDeviceDxe"
-  }       
-  FILE APPLICATION = eee9c2b1-16ca-4f34-87ea-2e6d1e160cc4  {
-    SECTION UI = "QcomChargerApp"
-    SECTION PE32 = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-eee9c2b1-16ca-4f34-87ea-2e6d1e160cc4/section1.pe
-  }       
-  FILE FREEFORM = a91d838e-a5fa-4138-825d-455e2303079e  {
+
+  INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Drivers/UsbDeviceDxe/UsbDeviceDxe.inf
+
+INF BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/QcomPkg/Application/QcomChargerApp/QcomChargerApp.inf
+
+FILE FREEFORM = A91D838E-A5FA-4138-825D-455E2303079E {
     SECTION UI = "BDS_Menu.cfg"
-    SECTION RAW = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-a91d838e-a5fa-4138-825d-455e2303079e/section1.raw
-  }
-  FILE FREEFORM = 3e5584ed-05d4-4267-9048-0d47f76f4248  {
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/BDS_Menu.cfg
+}
+
+
+FILE FREEFORM = 037CC4C1-0EBE-4494-9803-DC5BF0824220 {
+    SECTION UI = "Panel_k7_38_0c_0a_fhdp_video.xml"
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/Panel_k7_38_0c_0a_fhdp_video.xml
+}
+
+
+FILE FREEFORM = BFE556BA-ECCA-4C86-A82D-477FF15B4684 {
+    SECTION UI = "Panel_k7_38_0c_0b_fhdp_video.xml"
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/Panel_k7_38_0c_0b_fhdp_video.xml
+}
+
+
+FILE FREEFORM = 02E0AF91-5D44-424F-828F-211ADC520B0C {
+    SECTION UI = "Panel_truly_td4330_fhd_cmd.xml"
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/Panel_truly_td4330_fhd_cmd.xml
+}
+
+
+FILE FREEFORM = 9BAE75D9-A217-4B31-9DCD-00D2609BC6AE {
+    SECTION UI = "Panel_truly_td4330_fhd_vid.xml"
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/Panel_truly_td4330_fhd_vid.xml
+}
+
+
+FILE FREEFORM = 9BAE75D9-A217-4B31-9DCD-00D2609B6784 {
+    SECTION UI = "Panel_truly_nt36525_hd_plus_vid.xml"
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/Panel_truly_nt36525_hd_plus_vid.xml
+}
+
+
+FILE FREEFORM = 9BAE75D9-A217-4B31-9DCD-00D2609B6785 {
+    SECTION UI = "Panel_nt36672e_fhd_plus_90hz_vid.xml"
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/Panel_nt36672e_fhd_plus_90hz_vid.xml
+}
+
+
+FILE FREEFORM = 3E5584ED-05D4-4267-9048-0D47F76F4248 {
     SECTION UI = "battery_symbol_Soc10.bmp"
-    SECTION RAW = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-3e5584ed-05d4-4267-9048-0d47f76f4248/section1.raw
-  }
-  FILE FREEFORM = 4753e815-ddd8-402d-bf69-9b8c4eb7573e  {
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/battery_symbol_Soc10.bmp
+}
+
+
+FILE FREEFORM = 4753E815-DDD8-402D-BF69-9B8C4EB7573E {
     SECTION UI = "battery_symbol_NoBattery.bmp"
-    SECTION RAW = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-4753e815-ddd8-402d-bf69-9b8c4eb7573e/section1.raw
-  }
-  FILE FREEFORM = 03ded53e-becd-428f-9f79-5aba64c58445  {
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/battery_symbol_NoBattery.bmp
+}
+
+
+FILE FREEFORM = 03DED53E-BECD-428F-9F79-5ABA64C58445 {
     SECTION UI = "battery_symbol_Nocharger.bmp"
-    SECTION RAW = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-03ded53e-becd-428f-9f79-5aba64c58445/section1.raw
-  }
-  FILE FREEFORM = 8b86cd38-c772-4fcf-85aa-345b2b3c1ab4  {
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/battery_symbol_Nocharger.bmp
+}
+
+
+FILE FREEFORM = 8B86CD38-C772-4FCF-85AA-345B2B3C1AB4 {
     SECTION UI = "battery_symbol_LowBatteryCharging.bmp"
-    SECTION RAW = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-8b86cd38-c772-4fcf-85aa-345b2b3c1ab4/section1.raw
-  }
-  FILE FREEFORM = 3fd97907-93f1-4349-af3c-3b68b0a5e626  {
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/battery_symbol_LowBatteryCharging.bmp
+}
+
+
+FILE FREEFORM = 3FD97907-93F1-4349-AF3C-3B68B0A5E626 {
     SECTION UI = "battery_symbol_LowBattery.bmp"
-    SECTION RAW = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-3fd97907-93f1-4349-af3c-3b68b0a5e626/section1.raw
-  }
-  FILE FREEFORM = b0f8d1be-5353-4812-b1f6-07e7768204cc  {
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/battery_symbol_LowBattery.bmp
+}
+
+
+FILE FREEFORM = B0F8D1BE-5353-4812-B1F6-07E7768204CC {
     SECTION UI = "battery_symbol_DebugBoot.bmp"
-    SECTION RAW = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-b0f8d1be-5353-4812-b1f6-07e7768204cc/section1.raw
-  }
-  FILE FREEFORM = f9e8f683-e065-4e09-b4f9-0230d7cecd08  {
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/battery_symbol_DebugBoot.bmp
+}
+
+
+FILE FREEFORM = F9E8F683-E065-4E09-B4F9-0230D7CECD08 {
     SECTION UI = "battery_symbol_DebugStay.bmp"
-    SECTION RAW = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-f9e8f683-e065-4e09-b4f9-0230d7cecd08/section1.raw
-  }
-  FILE FREEFORM = e2ea5a4f-98bd-4203-ab49-399505ddfb7d  {
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/battery_symbol_DebugStay.bmp
+}
+
+
+FILE FREEFORM = E2EA5A4F-98BD-4203-AB49-399505DDFB7D {
     SECTION UI = "tsens_thermal_symbol.bmp"
-    SECTION RAW = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-e2ea5a4f-98bd-4203-ab49-399505ddfb7d/section1.raw
-  }
-  FILE FREEFORM = c72fb1a9-5527-4e13-bac4-f671d0330145  {
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/tsens_thermal_symbol.bmp
+}
+
+
+FILE FREEFORM = C72FB1A9-5527-4E13-BAC4-F671D0330145 {
     SECTION UI = "tsens_thermal_err_symbol.bmp"
-    SECTION RAW = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-c72fb1a9-5527-4e13-bac4-f671d0330145/section1.raw
-  }
-  FILE FREEFORM = a1e235de-e825-4591-9623-c43175811826  {
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/tsens_thermal_err_symbol.bmp
+}
+
+
+FILE FREEFORM = A1E235DE-E825-4591-9623-C43175811826 {
     SECTION UI = "SecParti.cfg"
-    SECTION RAW = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-a1e235de-e825-4591-9623-c43175811826/section1.raw
-  }
-  FILE FREEFORM = 21e9bdd9-6c3f-4f10-84a5-bbec322741f1  {
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/SecParti.cfg
+}
+
+
+FILE FREEFORM = 21E9BDD9-6C3F-4F10-84A5-BBEC322741F1 {
     SECTION UI = "uefipil.cfg"
-    SECTION RAW = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-21e9bdd9-6c3f-4f10-84a5-bbec322741f1/section1.raw
-  }
-  FILE FREEFORM = 45fe4b7c-150c-45da-a021-4beb2048ec6f  {
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/uefipil.cfg
+}
+
+
+FILE FREEFORM = 45FE4B7C-150C-45DA-A021-4BEB2048EC6F {
     SECTION UI = "QcomChargerCfg.cfg"
-    SECTION RAW = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-45fe4b7c-150c-45da-a021-4beb2048ec6f/section1.raw
-  }
-  FILE FREEFORM = f780c779-dd7c-47cd-bd1a-5eb414c51704  {
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/QcomChargerCfg.cfg
+}
+
+
+FILE FREEFORM = F780C779-DD7C-47CD-BD1A-5EB414C51704 {
     SECTION UI = "BATTERY.PROVISION"
-    SECTION RAW = RedmiNote11Binaries/BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/volume-8/file-f780c779-dd7c-47cd-bd1a-5eb414c51704/section1.raw
-  }
+    SECTION RAW = BOOT.XF.4.1-00316-KAMORTALAZ-1.449341.1/RawFiles/BATTERY.PROVISION
+}
+

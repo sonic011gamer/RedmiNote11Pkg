@@ -44,3 +44,5 @@
   [Components.common]
   # Graphics Driver
   SurfaceDuoFamilyPkg/Driver/SimpleFbDxe/SimpleFbDxe.inf
+  SurfaceDuoFamilyPkg/Driver/GpioButtons/GpioButtons.inf
+  MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
